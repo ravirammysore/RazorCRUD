@@ -1,0 +1,34 @@
+﻿@page
+@model RazorCRUD.Pages.IndexModel
+@{
+    ViewData["Title"] = "Student List";
+}
+
+<h1>Student List</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>City</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model.Students)
+        {
+            <tr>
+                <td>@student.Id</td>
+                <td>@student.Name</td>
+                <td>@student.City</td>
+                <td>
+                    <a asp-page="/Edit" asp-route-id="@student.Id">Edit</a> |
+                    <a asp-page="/Delete" asp-route-id="@student.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-page="/Create">Create New</a>
