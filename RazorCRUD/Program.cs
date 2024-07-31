@@ -1,3 +1,7 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using RazorCRUD.Data;
+
 internal class Program
 {
     private static void Main(string[] args)
@@ -6,6 +10,10 @@ internal class Program
 
         // Add services to the container.
         builder.Services.AddRazorPages();
+
+        // Configure the DbContext with dependency injection
+        builder.Services.AddDbContext<StudentDemoContext>(options =>
+            options.UseSqlServer(builder.Configuration.GetConnectionString("StudentDemoConnection")));
 
         var app = builder.Build();
 
