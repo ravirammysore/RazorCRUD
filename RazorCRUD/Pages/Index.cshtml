@@ -12,6 +12,7 @@
             <th>ID</th>
             <th>Name</th>
             <th>City</th>
+            <th>Age</th>
             <th></th>
         </tr>
     </thead>
@@ -22,6 +23,7 @@
                 <td>@student.Id</td>
                 <td>@student.Name</td>
                 <td>@student.City</td>
+                <td>@student.Age</td>
                 <td>
                     <a asp-page="/Edit" asp-route-id="@student.Id">Edit</a> |
                     <a asp-page="/Delete" asp-route-id="@student.Id">Delete</a>

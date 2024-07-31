@@ -41,6 +41,7 @@ namespace RazorCRUD.Pages
 
             studentInList.Name = Student.Name;
             studentInList.City = Student.City;
+            studentInList.Age = Student.Age;    
 
             return RedirectToPage("/Index");
         }
